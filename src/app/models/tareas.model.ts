@@ -6,6 +6,6 @@ export interface TareasInterface {
 export class TareasModel implements TareasInterface {
 
   constructor(
-    public name: string,
-    public isCompleted: boolean) {}
+    public name: string = '',
+    public isCompleted: boolean = false) {}
 }

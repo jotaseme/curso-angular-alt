@@ -256,6 +256,10 @@ svg#clouds {
     width: 1920px;
 }
 
+.destacar {
+    background-color: greenyellow;
+}
+
 
 /* Responsive Styles */
 
