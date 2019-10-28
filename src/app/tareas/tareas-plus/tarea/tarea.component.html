@@ -1,2 +1,3 @@
-<input type="checkbox" [id]="'estado_' + index" [(ngModel)]="tarea.isCompleted"> {{ tarea.name }}
+<input type="checkbox" [id]="'estado_' + index" [(ngModel)]="tarea.isCompleted">
+<span [ngClass]="{completed: tarea.isCompleted}">{{ tarea.name }}</span>
 <span (click)="onDelete()" class="boton">🗑</span>
