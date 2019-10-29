@@ -4,7 +4,7 @@
 
     <ul>
         <li *ngFor="let tarea of aTareas; let i = index">
-            <alt-tarea [tarea]="tarea" [index]="i" (delete)="onDeleteTarea($event)"></alt-tarea>
+            <alt-tarea [tarea]="tarea" [index]="i" (edit)="onEditTarea($event)" (delete)="onDeleteTarea($event)"></alt-tarea>
         </li>
     </ul>
 </div>

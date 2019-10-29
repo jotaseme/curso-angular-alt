@@ -8,6 +8,8 @@ import { CoreModule } from './core/core.module';
 import { registerLocaleData } from '@angular/common';
 import localEs from '@angular/common/locales/es';
 import { ShareModule } from './share/share.module';
+import { StoreModule } from '@ngrx/store';
+import { reducers } from './reducers';
 
 registerLocaleData(localEs, 'es');
 
@@ -20,7 +22,8 @@ registerLocaleData(localEs, 'es');
     AppRoutingModule,
     FormsModule,
     CoreModule,
-    ShareModule
+    ShareModule,
+    StoreModule.forRoot(reducers)
   ],
   providers: [{provide: LOCALE_ID, useValue: 'es-ES'}],
   bootstrap: [AppComponent]

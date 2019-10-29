@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-altran"
+    }
+  },
+  "defaultProject": "angular-altran",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
