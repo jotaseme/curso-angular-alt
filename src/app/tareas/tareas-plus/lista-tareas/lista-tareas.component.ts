@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { TareasModel } from 'src/app/models/tareas.model';
 import { LocalStoreService } from 'src/app/services/local-store.service';
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/reducers';
+import { AddTarea } from 'src/app/reducers/tareas.actions';
 
 @Component({
   selector: 'alt-lista-tareas',
@@ -10,7 +13,9 @@ import { LocalStoreService } from 'src/app/services/local-store.service';
 export class ListaTareasComponent implements OnInit {
   storeKey: string;
   aTareas: Array<TareasModel>;
-  constructor(private localStorage: LocalStoreService) { }
+  constructor(
+    private localStorage: LocalStoreService,
+    private store: Store<AppState>) { }
 
   ngOnInit() {
     this.storeKey = 'Tareas';
@@ -20,6 +25,7 @@ export class ListaTareasComponent implements OnInit {
   onAddTarea = (newTarea: TareasModel) => {
     this.aTareas.push(newTarea);
     this.actualizarStore();
+    this.store.dispatch(new AddTarea(newTarea));
   }
 
   onDeleteTarea = (index: number) => {
